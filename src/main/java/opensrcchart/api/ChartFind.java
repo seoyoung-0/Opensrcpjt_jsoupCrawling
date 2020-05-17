@@ -33,7 +33,6 @@ public class ChartFind extends HttpServlet {
 		Elements element = doc.select(".list-wrap tbody");
 		for(Element el : element.select(".list .info")) {
 			System.out.println(el.text());
-			
 		}
 	}
 
