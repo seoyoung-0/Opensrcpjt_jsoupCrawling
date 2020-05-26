@@ -30,7 +30,6 @@ public class ChartFind extends HttpServlet {
 		
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		
 	}
 	
 	protected JSONObject getChart(String year) throws IOException {
