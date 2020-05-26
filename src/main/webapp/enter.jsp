@@ -1,17 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-sclae=1">
+	<link rel="stylesheet" href="css/enter.css">
+
+<title>â€»íƒ‘ê³¨ë®¤ì§ì°¨íŠ¸â€»</title>
 </head>
 <body>
 
 <form action="Chart" method ="get">
-³âµµ¸¦ ÀÔ·ÂÇÏ¼¼¿ä!<br>
+ë…„ë„ë¥¼ ì…ë ¥í•˜ì„¸ìš”!<br>
 	<input type="text" name="year">
-	<input type="submit" value="Á¦Ãâ">
+	<input type="submit" value="ì œì¶œ">
 </form>
 </body>
 </html>

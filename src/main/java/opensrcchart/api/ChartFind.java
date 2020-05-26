@@ -2,12 +2,15 @@ package opensrcchart.api;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -23,17 +26,43 @@ public class ChartFind extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String inputYear=request.getParameter("year");
-		getChart(inputYear);
+		JSONObject JsonResult = getChart(inputYear);
+		
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
 		
 	}
 	
-	protected void getChart(String year) throws IOException {
+	protected JSONObject getChart(String year) throws IOException {
+		JSONObject dataMain = new JSONObject();
+		JSONArray siteJsonArray= new JSONArray();
+		
 		String url="https://www.genie.co.kr/chart/musicHistory?year="+year+"&category=0";
 		Document doc =Jsoup.connect(url).get();
 		Elements element = doc.select(".list-wrap tbody");
-		for(Element el : element.select(".list .info")) {
-			System.out.println(el.text());
+		Elements list = element.select(".list");
+		int cnt=0;
+		JSONObject jsonObject=null;
+		for(Element e : list.select(".info a")) {
+			
+			if(cnt==0) {
+				jsonObject= new JSONObject();
+				jsonObject.put("title", e.text());
+				cnt++;}
+			else if(cnt==1) {
+				jsonObject.put("artist", e.text());
+				cnt++;}
+			else if(cnt==2) {
+				jsonObject.put("albumTitle", e.text());
+				cnt++;}
+			if(cnt==3) {
+			siteJsonArray.add(jsonObject);
+			//System.out.println(jsonObject.toString());
+			cnt=0;
+			}
 		}
+		dataMain.put("ChartArray",siteJsonArray);
+		return dataMain;
 	}
 
 }
