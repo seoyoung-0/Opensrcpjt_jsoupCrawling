@@ -1,8 +1,8 @@
 package opensrcchart.api;
 
+import java.io.FileWriter;
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,20 +16,24 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-/**
- * Servlet implementation class ChartFind
- */
-@WebServlet("/Chart")
+@WebServlet("/ChartFind")
 public class ChartFind extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	//1위~50위 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String inputYear=request.getParameter("year");
-		JSONObject JsonResult = getChart(inputYear);
 		
+		JSONObject JsonResult = getChart(inputYear);
+		String returnResult=JsonResult.toJSONString();
+		/*
+		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json");
-		response.setCharacterEncoding("UTF-8");
+		response.getWriter().print(returnResult);
+		*/
+		request.setAttribute("returnResult", returnResult);
+		request.getRequestDispatcher("result.jsp").forward(request, response);
+		
 	}
 	
 	protected JSONObject getChart(String year) throws IOException {
@@ -61,6 +65,7 @@ public class ChartFind extends HttpServlet {
 			}
 		}
 		dataMain.put("ChartArray",siteJsonArray);
+		
 		return dataMain;
 	}
 
