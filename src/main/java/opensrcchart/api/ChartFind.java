@@ -1,4 +1,4 @@
-package opensrcchart.api;
+﻿package opensrcchart.api;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -19,7 +19,6 @@ import org.jsoup.select.Elements;
 @WebServlet("/ChartFind")
 public class ChartFind extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	//1위~50위 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String inputYear=request.getParameter("year");
@@ -65,7 +64,6 @@ public class ChartFind extends HttpServlet {
 			}
 		}
 		dataMain.put("ChartArray",siteJsonArray);
-		
 		return dataMain;
 	}
 
