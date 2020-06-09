@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,22 +16,6 @@
 	<input type="text" name="year" id="year">
 	<input type="submit" value="제출">
 </form>
-
-<table >
-<thead>
-<tr>
-	<th>
-	</th>
-</tr>
-</thead>
-<tbody id="ajaxTable">
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-</tbody>
-</table>
 
 </body>
 </html>
