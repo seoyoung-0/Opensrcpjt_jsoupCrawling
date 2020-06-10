@@ -1,0 +1,55 @@
+@font-face { font-family: 'NeoDunggeunmo';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+font-weight: normal; font-style: normal;
+}
+@font-face {
+	font-family: "My Font";
+	src: url("./YTTE08.TTF");
+}
+ body{
+	 margin : 0;
+	 background-color:#2a2ac9;
+ }
+ .yearTitle{
+	 height : 40%;
+	 margin : 10px;
+	 padding :3% 0;
+	 text-align: center;
+	 font-size: 3.3em;
+	 font-family: "NeoDunggeunmo";
+	 color : #ffffff;
+ }
+ table{
+width : 70%;
+margin : auto;
+text-align: center;
+}
+td{
+	width : 25%;
+	border : 10px solid #2a2ac9;
+	font-size: 1.5em;
+	color : #ffffff;
+	font-family: "NeoDunggeunmo";
+}
+div{
+	height : 50px;
+	line-height: 50px;
+	vertical-align: middle;
+	font-family: "NeoDunggeunmo";
+}
+.first{
+	background-color: #ef7d07d9;
+	color: #fef6ff;
+}
+.second{
+	background-color: #36e026;
+	color: #fef6ff;
+}
+.third{
+	background-color: #cb42da;
+	color: #fef6ff;
+}
+.four{
+	background-color: #f7fc06;
+	color: #3230ae;
+}

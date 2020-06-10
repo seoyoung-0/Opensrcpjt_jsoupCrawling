@@ -25,11 +25,6 @@ public class ChartFind extends HttpServlet {
 		
 		JSONObject JsonResult = getChart(inputYear);
 		String returnResult=JsonResult.toJSONString();
-		/*
-		response.setCharacterEncoding("utf-8");
-		response.setContentType("application/json");
-		response.getWriter().print(returnResult);
-		*/
 		request.setAttribute("returnResult", returnResult);
 		request.getRequestDispatcher("result.jsp").forward(request, response);
 		
@@ -64,6 +59,7 @@ public class ChartFind extends HttpServlet {
 			}
 		}
 		dataMain.put("ChartArray",siteJsonArray);
+		dataMain.put("year",year);
 		return dataMain;
 	}
 

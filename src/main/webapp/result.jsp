@@ -1,12 +1,14 @@
 <%@page import="org.json.simple.*"%>
 <%@page import="org.json.simple.parser.*"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>΅ΨΕΎ°ρΉΒΑχΒχΖ®΅Ψ</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/result.css">
+<title>β€»νƒ‘κ³¨λ®¤μ§μ°¨νΈβ€»</title>
 </head>
 
 <body>
@@ -18,24 +20,27 @@
 	JSONParser jsonParser = new JSONParser();
 	JSONObject jsonObj = (JSONObject)jsonParser.parse(jsonstr); //chart
 	
+	System.out.println("jsonObj:"+ jsonObj);
 	JSONArray jsonArr= (JSONArray)jsonObj.get("ChartArray");
 %>
+<h2 class="yearTitle"> β™£ <%=jsonObj.get("year") %> λ…„μ μμ•… μ°¨νΈ β™£ </h2>
+<hr class="line">
 	<table>
 	<thead>
 		<tr>
-			<td>Όψΐ§</td>
-			<td>³λ·΅Έν</td>
-			<td>°΅ΌφΈν</td>
-			<td>ΎΩΉόΈν</td>
+			<td><div class="first">μμ„</div></td>
+			<td><div class="second">λ…Έλλª…</div></td>
+			<td><div class="third">κ°€μλª…</div></td>
+			<td><div class="four">μ•¨λ²”λª…</div></td>
 		</tr>
-	</thead>	
+	</thead>
 	<tbody>
 	<%
 	for(int i=0;i<jsonArr.size();i++){
 		JSONObject obj = (JSONObject)jsonArr.get(i);
 %>
-	<tr>
-		<td><%=i+1 %></td>
+<tr>
+		<td><%= i+1 %>μ„ </td>
 		<td><%= obj.get("title")%></td>
 		<td><%= obj.get("artist")%></td>
 		<td><%= obj.get("albumTitle")%></td>
