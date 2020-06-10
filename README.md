@@ -20,3 +20,5 @@
 -----
 - 서블릿에서 데이터 크롤링 수행 후, response 로 얻어온 jsondata 보내주기
 - result.jsp 에서는 json데이터 받아서 jsp el 문법 사용해서 출력 
+- 디자인 마무리 
+
