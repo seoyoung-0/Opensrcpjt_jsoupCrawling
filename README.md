@@ -22,4 +22,8 @@
 - result.jsp 에서는 json데이터 받아서 jsp el 문법 사용해서 출력 
 - 디자인 마무리 
 -----
-<img src="enter.PNG" width="30%"></img>
+> enter.jsp
+<img src="enter.PNG" width="40%"></img>
+-----
+> result.jsp
+<img src="result.PNG" width="40%"></img>
