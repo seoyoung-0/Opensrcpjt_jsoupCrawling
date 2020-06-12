@@ -23,8 +23,8 @@
 - 디자인 마무리 
 -----
 ##### enter.jsp
-<img src="enter.PNG" width="40%"></img>
+<img src="enter.PNG" width="50%"></img>
 -----
 ##### result.jsp
-<img src="result.PNG" width="40%"></img>
+<img src="result.PNG" width="50%"></img>
 -----
