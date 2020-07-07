@@ -23,7 +23,7 @@
 - 디자인 마무리 
 -----
 
-<img src="enter.PNG" width="60%"></img>
+<img src="enter.PNG" width="65%"></img>
 -----
-<img src="result.PNG" width="60%"></img>
+<img src="result.PNG" width="65%"></img>
 -----
